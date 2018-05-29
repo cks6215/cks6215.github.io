@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="ko">
+<head>
+  <title>Saying Posting</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+    <div class="post_container">
+        <h2>Title: {{ subject.title }}</h2>
+        <form action="{% url 'introduce:vote' subject.id %}" method="post">
+        {% for saying in subject.choice_set.all %}
+            {% csrf_token %}
+            <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ saying.id }}">
+            <label for="choice{{ forloop.counter }}">{{ saying.content }}</label>
+
+        {% endfor %}
+            <input type="submit" value="Vote">
+        </form>
+
+        <!--<a href="{% url 'introduce:update' subject.id %}"><Button>Update</Button></a>-->
+        <a href="{% url 'introduce:delete' subject.id %}"><button>Delete</button></a>
+        <a href="{% url 'introduce:board' %}"><button>Back</button></a>
+    </div>
+</body>
+</html>

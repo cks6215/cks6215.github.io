@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="ko">
+<head>
+  <title>My Little Lotto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href="//fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/lotto.css' %}">
+</head>
+
+<body>
+  <div class="page-header">
+    <h1>My Lotto Page</h1>
+    <h2>
+      <a href="{% url 'lotto:new' %}">
+        <span class="glyphicon glyphicon-plus btn btn-default"></span>
+      </a>
+    </h2>
+  </div>
+  <div class="page-header">
+      <h1>{{lotto.id}} Detail View</h1>
+  </div>
+  <div class="container lotto">
+      <h1><b>Detail View</b></h1>
+      <h2>{{lotto.name}}</h2>
+      <p>{{lotto.text}}</p>
+      <p>{{lotto.update_date}}</p>
+      <p>{{lotto.lottos|linebreaks}}</p>
+      <a href="{% url 'lotto:update' pk=lotto.id %}"><p>수정</p></a>
+
+      <form action="{% url 'lotto:delete' pk=lotto.id %}" method="POST">
+          {% csrf_token %}
+          <input type="submit" value="삭제">
+      </form>
+  </div>
+</body>
+</html>

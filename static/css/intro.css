@@ -1,0 +1,104 @@
+html{
+    font-size: 15px;
+    line-height: 1.6;
+    font-family: 'Kopub Batang', serif;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+.header{
+    height: 1000px;
+    background-size: cover;
+    background-position: center center;
+    background-image: linear-gradient(to bottom, transparent 0%, black 100%), url("../img/blog_bg.jpg");
+
+}
+
+.stars{
+    margin-top: 180px;
+}
+
+.star img{
+    width: 60px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+
+.star__1{
+    text-align: center;
+}
+
+.stars .star__1 p{
+    color: white;
+    font-size: 15px;
+}
+
+.name{
+    margin-top: 35%;
+    margin-right: 30%;
+    text-align: right;
+}
+
+.name p{
+    word-spacing: 20px;
+}
+
+/* main */
+
+.main h1{
+    margin-left: 50px;
+}
+
+ul, ol{
+    list-style: none;
+    padding: 0;
+}
+
+.fisrt__letter{
+    color: #FBBC05;
+}
+
+#history, #goal{
+    font-size: 20px;
+    font-family: 'Kopub Batang', serif;
+    color: #FBBC05;
+    text-align: center;
+}
+
+.history{
+    border: 1px solid silver;
+    padding: 10px;
+    padding-top: 30px;
+}
+
+.carousel-item{
+    height: 500px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.carousel-item img{
+    width: 400px;
+    height: 250px;
+    margin-top: 7%;
+    margin-bottom: 5px;
+}
+
+
+.goal{
+    margin-top: 70px;
+}
+
+.box__goal{
+    text-align: center;
+    font-family: 'Kopub Batang', serif;
+    font-size: 30px;
+}
+
+.footer{
+    text-align: center;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="ko">
+<head>
+  <title>Saying Posting</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+    <div class="posting_form_container">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="text" value="subject" name="subject">
+
+            <input type="submit" value="create">
+        </form>
+        <a href="{% url 'introduce:board' %}"><button>Back</button></a>
+    </div>
+</body>
+</html>

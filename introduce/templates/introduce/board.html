@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="ko">
+<head>
+  <title>Saying Posting</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+    <div class="subject_container">
+        {% for subject in subjects %}
+        <a href="{% url 'introduce:detail' subject.id %}">
+        <div class="subject_box">
+            <h2>Title: {{ subject.title }}</h2>
+            <p>Content: {{ subject.content }}</p>
+        </div>
+        </a>
+        {% endfor %}
+    </div>
+    <div class="">
+        <!--<a href="{% url 'introduce:board_form' %}"><button>New</button></a>-->
+        <a href="{% url 'introduce:intro' %}"><button>Back</button></a>
+    </div>
+</body>
+</html>
