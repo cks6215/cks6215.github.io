@@ -21,6 +21,6 @@ from lotto import views as lotto_view
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    url(r'^', include('introduce.urls', namespace="introduce")),
+    url(r'^http://cks6215.github.io/', include('introduce.urls', namespace="introduce")),
     url(r'^lotto/', include('lotto.urls', namespace='lotto')),
 ]
